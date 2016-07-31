@@ -1,10 +1,10 @@
 Package.describe({
-  name: 'create-container',
+  name: 'planefy:blaze-container',
   version: '0.0.1',
   // Brief, one-line summary of the package.
-  summary: '',
+  summary: 'Simple containers for Blaze, inspired by react-meteor-data',
   // URL to the Git repository containing the source code for this package.
-  git: '',
+  git: 'https://github.com/mbreuer23/blaze-container',
   // By default, Meteor will default to using README.md for documentation.
   // To avoid submitting documentation, set this field to null.
   documentation: 'README.md'
@@ -21,8 +21,5 @@ Package.onUse(function(api) {
 });
 
 Package.onTest(function(api) {
-  api.use('ecmascript');
-  api.use('tinytest');
-  api.use('create-container');
-  api.mainModule('create-container-tests.js');
+  //TODO
 });
