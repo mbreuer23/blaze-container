@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Blaze } from 'meteor/blaze';
 import { Tracker } from 'meteor/tracker';
+import { Spacebars } from 'meteor/spacebars';
 
 export const createContainer = (container, child, reactiveFn) => {
   Template.__checkName(container);
@@ -18,7 +19,6 @@ export const createContainer = (container, child, reactiveFn) => {
   }));
 
   Template[container].onCreated(function() {
-
     this.dep = new Tracker.Dependency();
 
     this.getContext = () => {
@@ -41,6 +41,4 @@ export const createContainer = (container, child, reactiveFn) => {
       return Object.assign(data, context);
     }
   });
-
-
 };
