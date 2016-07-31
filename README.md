@@ -10,11 +10,13 @@ meteor add planefy:blaze-container
 ```javascript
 // ../client/container.js
 // assume you already have a template called 'childTemplate' defined
-
+import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/planefy:blaze-container'
 
 createContainer('containerTemplate', 'childTemplate', function() {
+   const handle = Meteor.subscribe('posts');
    return {
+       ready: handle.ready(),
        posts: Posts.find().fetch()
    };
 });
@@ -31,11 +33,11 @@ It will also pass through any data provided to containerTemplate, so that if you
   {{> containerTemplate user=user}}
 </template>
 ```
-Then childTemplate will receive both ```user``` and ```posts``` as its data context. In other words, it will be just like
+Then childTemplate will receive both ```user``` , ```ready```, and ```posts``` as its data context. In other words, it will be just like
 you did this:
 
 ```html
 <template name="other">
- {{> childTemplate user=user posts=posts }}
-</template
+ {{> childTemplate user=user posts=posts  ready=ready}}
+</template>
 ```
