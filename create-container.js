@@ -26,9 +26,11 @@ export const createContainer = (container, child, reactiveFn) => {
       return this.context;
     };
 
-    this.autorun(() => {
-      this.context = reactiveFn();
-      this.dep.changed();
+    Tracker.nonreactive(() => {
+      this.autorun((c) => {
+        this.context = reactiveFn(c);
+        this.dep.changed();
+      });
     });
   });
 
