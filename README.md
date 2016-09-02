@@ -1,5 +1,5 @@
 # Blaze Container
-Simple container utility for Blaze, inspired by [react-meteor-data](https://github.com/meteor/react-packages/tree/devel/packages/react-meteor-data)
+Easily Create Blaze containers without any markup. Inspired By [react-meteor-data](https://github.com/meteor/react-packages/tree/devel/packages/react-meteor-data)
 
 ### Installation
 ```
