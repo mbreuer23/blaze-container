@@ -78,3 +78,15 @@ Template.containerTemplate.onRendered(function() {
   // do stuff 
 });
 ```
+
+### API
+
+#### createContainer(containerTemplate, childTemplate, reactiveFn)
+
+where:
+
+containerTemplate = the name of the container
+
+childTemplate = this name of the child template that you wish to wrap in a container (must already be defined)
+
+reactiveFn = a function that returns (possibly) reactive data.  It receives one argument: a Tracker Computation object
